@@ -1,0 +1,18 @@
+[package]
+name = "example-http-proxy"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+regex = "1.10.4"
+axum = { version = "0.7.5", features = ["query"] }
+select = "0.6.0"
+serde = { version = "1.0.197", features=[ "derive"] }
+reqwest = "0.12.3"
+hyper = { version = "1", features = ["full"] }
+hyper-util = "0.1.1"
+tokio = { version = "1.0", features = ["full"] }
+tower = { version = "0.4", features = ["make"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
