@@ -2,32 +2,10 @@
 <html>
 	<head>
 		<link data-trunk rel="rust" data-wasm-opt="z"/>
-
-			<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>Parent Document with Proxy</title>
-			<script>
-				        function proxyNavigation(event) {
-            event.preventDefault(); // Prevent default behavior
-            var targetUrl = event.target.href || event.target.action;
-            var proxyUrl = 'http://localhost:8080/proxy?url=' + encodeURIComponent(targetUrl);
-            document.getElementById('myIframe').src = proxyUrl; // Redirect iframe through the proxy server
-        }
-        window.addEventListener('load', function() {
-            var iframeWindow = document.getElementById('myIframe').contentWindow;
-            if (iframeWindow) {
-                iframeWindow.addEventListener('fetch', function(event) {
-                    var request = event.request;
-                    var url = request.url;
-                    if (url.startsWith('http://') || url.startsWith('https://')) {
-                        // Modify the request URL to route it through the proxy server
-                        var proxyUrl = 'http://localhost:8080/proxy?url=' + encodeURIComponent(url);
-                        event.respondWith(fetch(proxyUrl));
-                    }
-                });
-            }
-        });
-			</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Parent Document</title>
+	</script>
 	</head>
 	<body></body>
 </html>

@@ -1,40 +1,18 @@
 <!DOCTYPE html><html><head>
 		
 <script type="module">
-import init, * as bindings from '/counter-5f4b6e789574760.js';
-init('/counter-5f4b6e789574760_bg.wasm');
+import init, * as bindings from '/counter-ee51d5d8df9199f5.js';
+init('/counter-ee51d5d8df9199f5_bg.wasm');
 window.wasmBindings = bindings;
 
 </script>
-
-			<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>Parent Document with Proxy</title>
-			<script>
-				        function proxyNavigation(event) {
-            event.preventDefault(); // Prevent default behavior
-            var targetUrl = event.target.href || event.target.action;
-            var proxyUrl = 'http://localhost:8080/proxy?url=' + encodeURIComponent(targetUrl);
-            document.getElementById('myIframe').src = proxyUrl; // Redirect iframe through the proxy server
-        }
-        window.addEventListener('load', function() {
-            var iframeWindow = document.getElementById('myIframe').contentWindow;
-            if (iframeWindow) {
-                iframeWindow.addEventListener('fetch', function(event) {
-                    var request = event.request;
-                    var url = request.url;
-                    if (url.startsWith('http://') || url.startsWith('https://')) {
-                        // Modify the request URL to route it through the proxy server
-                        var proxyUrl = 'http://localhost:8080/proxy?url=' + encodeURIComponent(url);
-                        event.respondWith(fetch(proxyUrl));
-                    }
-                });
-            }
-        });
-			</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Parent Document</title>
 	
-<link rel="preload" href="/counter-5f4b6e789574760_bg.wasm" crossorigin="anonymous" integrity="sha384-6fYbM84ltP1TBTXKAiNk8poBN-xCV14kcqVXI58fSlPrO_kJUMAehiyPeE8E8rd3" as="fetch" type="application/wasm">
-<link rel="modulepreload" href="/counter-5f4b6e789574760.js" crossorigin="anonymous" integrity="sha384-lnvDE5TmGCaDsz_BvdNt7MLjpeeYcgVvVxfXh91oHrxqYGI8H70pAB1S-499A-am"></head>
+	
+<link rel="preload" href="/counter-ee51d5d8df9199f5_bg.wasm" crossorigin="anonymous" integrity="sha384-vqknoDEKP43RfjceFculeX4c9f8Hgd1kn_jbgAkE4g0u5qUxSO2PSSrtMONF1PKJ" as="fetch" type="application/wasm">
+<link rel="modulepreload" href="/counter-ee51d5d8df9199f5.js" crossorigin="anonymous" integrity="sha384-lnvDE5TmGCaDsz_BvdNt7MLjpeeYcgVvVxfXh91oHrxqYGI8H70pAB1S-499A-am"></head>
 	<body>
 <script>"use strict";
 
